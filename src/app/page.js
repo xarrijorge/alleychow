@@ -38,7 +38,7 @@ export default function Home() {
             alt="Street Food"
             width={400}
             height={300}
-            objectFit="cover"
+            priority
           />
         </div>
 
