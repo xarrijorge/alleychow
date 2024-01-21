@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import tailwindConfig from "../../tailwind.config";
-import { Inter } from 'next/font/google'
 import './globals.css'
 import Footer from './Footer'
 
@@ -16,10 +15,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <p>Top navbar</p>
         {children}
-        <Footer/>
-        </body>
+        <Footer />
+      </body>
     </html>
   );
 }
