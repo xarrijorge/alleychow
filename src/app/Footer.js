@@ -4,11 +4,11 @@ const Footer = () => {
 
   return (
     <>
-      <div className="w-4/5 lg:w-3/5 mx-auto bg-slate-400 h-72 shadow-lg rounded-3xl overflow-hidden flex flex-col justify-center items-center my-10 ">
+      <div className="w-4/5 lg:w-3/5 text-white  mx-auto bg-black h-72 shadow-lg rounded-3xl overflow-hidden flex flex-col justify-center items-center my-10 ">
         <div className="px-4 py-2">
-          <h2 className="text-center text-gray-800 font-bold text-2xl mb-4">Receive Food Conveniently</h2>
-          <p className="text-center text-gray-700 text-base mb-4">Join our team of satisfied customers</p>
-          <button className="block w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <h2 className="text-center  font-bold text-2xl mb-4">Receive Food Conveniently</h2>
+          <p className="text-center  text-base mb-4">Join our team of satisfied customers</p>
+          <button className="block w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
             Join Now
           </button>
         </div>
@@ -22,7 +22,7 @@ const Footer = () => {
 
             <input type="email" placeholder="Enter your email" className="p-2 w-6/12 rounded border border-gray-300 mx-2 my-2" />
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold mx-2 py-2 px-10 rounded my-2">
+              className="bg-orange-400 hover:bg-orange-600 text-white font-bold mx-2 py-2 px-10 rounded my-2">
               Sign Up
             </button>
 
