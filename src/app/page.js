@@ -1,35 +1,14 @@
 "use client"
 import Image from "next/image";
 import { useState } from "react";
+import Navigation from "./components/navigation";
 
 export default function Home() {
   const [selectedFoodGroup, setSelectedFoodGroup] = useState("");
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <nav className="bg-white py-4 px-6 flex flex-col md:flex-row items-center md:justify-between border-b border-gray-200">
-        {/* <div className="mb-4 md:mb-0"> */}
-        <input
-          type="text"
-          placeholder="Find Street Food"
-          className="w-full md:w-6/10 lg:w-6/10 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-        />
-        {/* </div> */}
-        <div className="flex justify-between mt-4 md:mt-0 ">
-          <select
-            value={selectedFoodGroup}
-            onChange={(e) => setSelectedFoodGroup(e.target.value)}
-            className="ml-4 px-4 py-2 mx-4 rounded-md focus:outline-none "
-          >
-            <option value="">All Food Groups</option>
-            <option value="1">Food Group 1</option>
-            {/* Add more food group options */}
-          </select>
-          <button className="bg-orange-400 text-white px-12 rounded-md hover:bg-orange-600 ml-4 border mx-4">
-            Search
-          </button>
-        </div>
-      </nav>
+      <Navigation / >
 
       <main className="container mx-auto px-4 py-8 flex flex-col md:flex-row items-center">
         <div className="bg-orange-400 w-full md:w-5/12 rounded-lg p-8 flex items-center justify-center order-1 md:order-2">

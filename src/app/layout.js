@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import tailwindConfig from "../../tailwind.config";
 import './globals.css'
-import Footer from './Footer'
+import Footer from './components/Footer'
 
 const inter = Inter({ subsets: ["latin"] });
 
