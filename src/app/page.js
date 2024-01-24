@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import { useState } from "react";
-import Navigation from "./components/navigation";
+import Navigation from "./components/navigationavigation";
 
 export default function Home() {
   const [selectedFoodGroup, setSelectedFoodGroup] = useState("");
