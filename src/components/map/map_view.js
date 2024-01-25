@@ -76,7 +76,7 @@ function MapView() {
     };
  }, []);
 
- return <div  id="map" ref={googleMapRef} style={{height: '500px'}}/>;
+ return <div  id="map" ref={googleMapRef} style={{height: '100%'}}/>;
 }
 
 export default MapView;
