@@ -53,6 +53,27 @@ function MapView() {
           url: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png', // Replace with the URL of your icon
         },
       });
+      if ('geolocation' in navigator) {
+        const handleSuccess = (position) => {
+          const { latitude, longitude } = position.coords;
+          marker.setPosition({ lat: latitude, lng: longitude });
+          map.setCenter({ lat: latitude, lng: longitude });
+        };
+    
+        const handleError = (error) => {
+          console.log(`An error occurred: ${error}`);
+        };
+    
+        const options = {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0,
+        };
+    
+        navigator.geolocation.watchPosition(handleSuccess, handleError, options);
+     } else {
+        alert('Geolocation is not supported by your browser.');
+     }
       markers.push(marker)
       places.forEach((place)=>{
         new google.maps.Marker({

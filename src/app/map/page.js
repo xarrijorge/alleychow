@@ -1,6 +1,7 @@
 'use client'
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
+import MapLayout from './layout';
 
 const MapView = dynamic(() => import('@/components/map/map_view'));
 
@@ -11,7 +12,7 @@ const places = [
  // Add more places here...
 ];
 
-export default function HomePage() {
+export default function MapPage() {
  const [showSidebar, setShowSidebar] = useState(false);
 
  return (
@@ -65,4 +66,12 @@ export default function HomePage() {
       </div>
     </div>
  );
+}
+
+MapPage.getLayout = function getLayout(page) {
+  return (
+    <MapLayout>
+      {page}
+    </MapLayout>
+  )
 }
