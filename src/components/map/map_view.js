@@ -22,12 +22,13 @@ function MapView() {
       apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
       version: 'weekly',
     });
-
+    
     let map;
     let markers = []
 
     loader.load().then(() => {
         // 5.6719752642817935, -0.15367046393232858
+        
         map = new google.maps.Map(googleMapRef.current, {
           center: { lat: 5.670497108084926, lng: -0.15376514161178176  },
           zoom: 18,
@@ -46,6 +47,7 @@ function MapView() {
           marker.setMap(null);
         });
         // 5.670497108084926, -0.15376514161178176
+        //your default current location
       const marker = new google.maps.Marker({
         position: { lat: 5.670497108084926, lng: -0.15376514161178176 },
         map: map,
@@ -53,6 +55,7 @@ function MapView() {
           url: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png', // Replace with the URL of your icon
         },
       });
+      //for changing navigation as you move
       if ('geolocation' in navigator) {
         const handleSuccess = (position) => {
           const { latitude, longitude } = position.coords;
@@ -74,18 +77,27 @@ function MapView() {
      } else {
         alert('Geolocation is not supported by your browser.');
      }
-      markers.push(marker)
+
+      // markers.push(marker)
+      const infowindow = new google.maps.InfoWindow();
       places.forEach((place)=>{
-        new google.maps.Marker({
+        let tempMarker = new google.maps.Marker({
           position: place,
+          url: 'http://www.google.com/',
           map: map,
           // icon: {
           //   url: 'http://maps.gstatic.com/mapfiles/ms2/micons/restaurant.png', 
           //   scaledSize: new google.maps.Size(40, 40)// Replace with the URL of your icon
           // },
         });
+        tempMarker.addListener('click', () => {
+          infowindow.setContent(`<a href="https://www.example.com/" target="_blank">Check food</a>`);
+          infowindow.open(map,tempMarker);
+       });
       })
       // 5.667271676040359, -0.15220036481231994
+      
+
 
   });
 
