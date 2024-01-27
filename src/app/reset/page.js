@@ -1,8 +1,8 @@
 export default function SignInPage() {
   return (
     <div
-      className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center bg-no-repeat px-6 py-8 mx-auto md:h-screen lg:py-0 shadow-md" // Added shadow-md here
-      style={{ backgroundImage: `url("/jollof.avif")` }}
+      className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center bg-no-repeat px-6 py-8 mx-auto md:h-screen lg:py-0 shadow-md"
+      // style={{ backgroundImage: `url("/jollof.avif")` }}
     >
       <div className="w-full max-w-md bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
