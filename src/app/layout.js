@@ -3,6 +3,7 @@ import "./globals.css";
 import tailwindConfig from "../../tailwind.config";
 import "./globals.css";
 import Footer from "./Footer";
+// import { Router } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 

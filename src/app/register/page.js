@@ -1,13 +1,21 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+"use client";
 
-export default function SignInPage() {
+import { useState } from "react";
+
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase/config";
+import Link from "next/link";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const navigate = useNavigate();
+  //   const navigation = useNavigation();
+  //   const router = useRouter();
 
   const registerUser = (e) => {
     e.preventDefault();
@@ -29,11 +37,13 @@ export default function SignInPage() {
         setIsLoading(false);
         toast.success("User registered successfully");
         // redirect the user to the login page
-        navigate("/home");
+        // // navigate("/home");
+        // router.push("/");
+        // navigation.push("/");
+        <Link href="/"></Link>;
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
         toast.error(errorMessage);
         setIsLoading(false);
@@ -46,6 +56,8 @@ export default function SignInPage() {
   return (
     <>
       {isLoading && <Loader />}
+
+      <ToastContainer />
       <div
         className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center bg-no-repeat px-6 py-8 mx-auto md:h-screen lg:py-0 shadow-md" // Added shadow-md here
         style={{ backgroundImage: `url("/jollof.avif")` }}
