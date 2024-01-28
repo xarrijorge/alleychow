@@ -17,7 +17,7 @@ const SingleCard = ({
           <h3>
             <a
               href={titleHref ? titleHref : '/#'}
-              className='mb-4 block text-xl font-semibold text-dark hover:text-primary dark:text-white sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]'>
+              className=' mb-4 block text-xl font-semibold text-dark hover:text-primary  sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]'>
               {CardTitle}
             </a>
           </h3>
