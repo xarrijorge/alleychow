@@ -8,6 +8,7 @@ import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "../loader";
+import { useRouter } from "next/navigation";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ export default function SignUpPage() {
   const [isLoading, setIsLoading] = useState(false);
 
   //   const navigation = useNavigation();
-  //   const router = useRouter();
+  const router = useRouter();
 
   const registerUser = (e) => {
     e.preventDefault();
@@ -37,11 +38,8 @@ export default function SignUpPage() {
         // once the user has signed up, set the loading state to false
         setIsLoading(false);
         toast.success("User registered successfully");
-        // redirect the user to the login page
-        // // navigate("/home");
-        // router.push("/");
-        // navigation.push("/");
-        <Link href="/"></Link>;
+        router.push("/");
+        // <Link href="/"></Link>;
         // ...
       })
       .catch((error) => {
