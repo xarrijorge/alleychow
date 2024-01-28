@@ -7,7 +7,7 @@ const SingleCard = ({
   CardDescription,
   CardTitle,
   titleHref,
-  btnHref,
+  id,
 }) => {
   return (
     <>
@@ -27,7 +27,12 @@ const SingleCard = ({
 
           {Button && (
             <Link
-              href={`listings/${btnHref}`}
+              href={{
+                pathname: '/listing',
+                query: {
+                  id,
+                },
+              }}
               className='inline-block rounded-full border border-gray-3 px-7 py-2 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary hover:text-white dark:border-dark-3 dark:text-dark-6'>
               {Button}
             </Link>
