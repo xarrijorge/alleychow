@@ -7,6 +7,7 @@ import { auth } from "../../firebase/config";
 import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loader from "../loader";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
