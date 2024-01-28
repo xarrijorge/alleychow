@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { signInWithEmailAndPassword } from "firebase/auth";
-// import {
-//   GoogleAuthProvider,
-//   signInWithEmailAndPassword,
-//   signInWithPopup,
-// } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 import { auth } from "../../firebase/config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -39,18 +38,18 @@ export default function SignInPage() {
       });
   };
 
-  // const provider = new GoogleAuthProvider();
-  // const logInWithGoogle = () => {
-  //   signInWithPopup(auth, provider)
-  //     .then((result) => {
-  //       const user = result.user;
-  //       toast.success("Login successful...");
-  //       navigate("/");
-  //     })
-  //     .catch((error) => {
-  //       toast.error(error.message);
-  //     });
-  // };
+  const provider = new GoogleAuthProvider();
+  const logInWithGoogle = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        toast.success("Login successful...");
+        router.push("/");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
 
   return (
     <>
@@ -85,7 +84,7 @@ export default function SignInPage() {
                     name="email"
                     id="email"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="name@company.com"
+                    placeholder="name@gmail.com"
                     required=""
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -140,7 +139,7 @@ export default function SignInPage() {
                 <button
                   type="submit"
                   className="w-full flex items-center justify-center text-white bg-orange-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                  // onClick={logInWithGoogle}
+                  onClick={logInWithGoogle}
                 >
                   <FaGoogle className="w-6 h-6 mr-2" /> Login with Google
                 </button>

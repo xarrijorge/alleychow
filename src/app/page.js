@@ -72,9 +72,12 @@ export default function Home() {
             <p className="text-lg text-gray-600">
               Discover local food vendors in your area.
             </p>
-            <button className="bg-orange-400 text-white px-4 py-2 rounded-md hover:bg-orange-600">
-              Start Exploring
-            </button>
+            <Link href="/register">
+              {" "}
+              <button className="bg-orange-400 text-white px-4 py-2 rounded-md hover:bg-orange-600">
+                Start Exploring
+              </button>
+            </Link>
           </div>
         </main>
       </div>
