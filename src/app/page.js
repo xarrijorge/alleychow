@@ -1,8 +1,19 @@
-"use client"
+"use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
+  const logOut = () => {
+    signOut(auth)
+      .then(() => {
+        toast.success("Logout successful...");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
   const [selectedFoodGroup, setSelectedFoodGroup] = useState("");
 
   return (
@@ -28,6 +39,12 @@ export default function Home() {
           <button className="bg-orange-400 text-white px-12 rounded-md hover:bg-orange-600 ml-4 border mx-4">
             Search
           </button>
+
+          <Link href="/login" onClick={logOut}>
+            <button className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-800">
+              Logout
+            </button>
+          </Link>
         </div>
       </nav>
 
