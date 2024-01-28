@@ -104,7 +104,7 @@ export default function SignUpPage() {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                   <label
-                    for="password"
+                    for="confirmPassword"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Confirm Password
