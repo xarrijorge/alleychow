@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 px-4 py-10">
           <div>
             <h2 className="font-bold text-4xl mb-4 md:text-6xl">Stay Updated with Deliciousness</h2>
-            <p className='my-4'>Subcribe to get good food deliveries</p>
+            <p className='my-4'>Subscribe to get good food deliveries</p>
 
             <input type="email" placeholder="Enter your email" className="p-2 w-6/12 rounded border border-gray-300 mx-2 my-2" />
             <button
