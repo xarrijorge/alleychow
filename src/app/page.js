@@ -1,18 +1,17 @@
 "use client"
 import Image from "next/image";
 import { useState } from "react";
-import Navigation from "./components/navigation";
+
 
 export default function Home() {
-  const [selectedFoodGroup, setSelectedFoodGroup] = useState("");
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Navigation / >
+     
 
       <main className="container mx-auto px-4 py-8 flex flex-col md:flex-row items-center">
         <div className="bg-orange-400 w-full md:w-5/12 rounded-lg p-8 flex items-center justify-center order-1 md:order-2">
-          <Image
+          <Image 
             src="/wakyee.png" // Replace with your image path
             alt="Street Food"
             width={400}
