@@ -18,7 +18,6 @@ export default function Home() {
         setDisplayUsername(user.displayName);
 
         if (user.displayName == null) {
-          // const userDisplayName = user.email.slice(0, -10);
           const userDisplayName = user.email.split("@")[0];
 
           const capitalizeUserDisplayName =
