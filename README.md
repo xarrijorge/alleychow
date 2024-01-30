@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AlleyChow Local Food Discovery App Readme
 
-## Getting Started
+## Introduction
+Welcome to the Local Food Discovery App! This mobile application is designed to revolutionize the way you discover, access, and enjoy affordable, high-quality food from local unlisted vendors during the weekends. Whether you're a culinary enthusiast, a budget-conscious eater, or simply someone looking to explore diverse flavors, our app is here to enhance your gastronomic experience.
 
-First, run the development server:
+## Features
+1. Effortless Exploration
+Intuitive Interface: Enjoy a seamless and user-friendly design for easy navigation.
+User-Centric Experience: Accessible to all, our app prioritizes simplicity and functionality.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Comprehensive Vendor Listings
+Detailed Profiles: Explore local vendors with detailed menus, pricing, and user reviews.
+Informed Decision-Making: Make informed choices based on real user experiences.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Tailored Search and Filters
+Robust Search: Find vendors based on cuisine, price range, location, and dietary preferences.
+Customization: Tailor the app to your tastes and budget constraints.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+4. Community-Driven Recommendations
+User Reviews and Ratings: Contribute to and benefit from a vibrant community of food enthusiasts.
+Real-Time Updates: Stay informed about trending vendors and dishes in real-time.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+5. Affordability at a Glance
+Innovative Affordability Meter: Identify vendors that match your budget preferences.
+Budget Controls: Set spending limits to discover affordable yet delectable options.
 
-## Learn More
+6. Location-Based Discovery
+Google Map Integration: Explore a map view of nearby vendors for diverse culinary experiences.
+Seamless Geolocation Services: Enhance your overall user experience.
 
-To learn more about Next.js, take a look at the following resources:
+## How it works?
+Simply go to https://alleychow.netlify.app/ and start exploring your local culinary scene today!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Feedback and Support
+We value your feedback! If you encounter any issues or have suggestions for improvement, please contact our support team at [support@alleychow.com]. Your input helps us enhance the app for a better user experience.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Happy Eating!
+Thank you for choosing the Local Food Discovery App. We hope it adds a dash of excitement to your weekends and transforms your dining experiences into culinary adventures!
