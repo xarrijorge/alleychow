@@ -120,7 +120,7 @@ export default function Home() {
           </button>
         </div>
         </div>
-
+          {/* subscribe to email news letter */}
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 px-4 py-10">
           <div>
             <h2 className="font-bold text-4xl mb-4 md:text-6xl">Stay Updated with Deliciousness</h2>
