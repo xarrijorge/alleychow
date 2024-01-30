@@ -3,9 +3,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import tailwindConfig from "../../tailwind.config";
-import "./globals.css";
-import Footer from "./Footer";
-// import { Router } from "next/router";
+import './globals.css'
+import Footer from './Footer'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,13 +15,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div id="loader"></div>
-        {children}
-
+    <><body>
+      <>
+        <Navigation>
+          {children}
+        </Navigation>
         <Footer />
-      </body>
-    </html>
-  );
+      </>
+    </body>
+    </>
+  )
 }
