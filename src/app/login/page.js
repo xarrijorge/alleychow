@@ -30,7 +30,7 @@ export default function SignInPage() {
         const user = userCredential.user;
         setIsLoading(false);
         toast.success("Login successful...");
-        router.push("/");
+        router.push("/listings");
       })
       .catch((error) => {
         setIsLoading(false);
@@ -44,7 +44,7 @@ export default function SignInPage() {
       .then((result) => {
         const user = result.user;
         toast.success("Login successful...");
-        router.push("/");
+        router.push("/listings");
       })
       .catch((error) => {
         toast.error(error.message);
