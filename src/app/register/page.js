@@ -37,8 +37,8 @@ export default function SignUpPage() {
         // once the user has signed up, set the loading state to false
         setIsLoading(false);
         toast.success("User registered successfully");
-        router.push("/");
-        // <Link href="/"></Link>;
+        router.push("/listings");
+
         // ...
       })
       .catch((error) => {
