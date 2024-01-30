@@ -4,16 +4,6 @@ const Footer = () => {
 
   return (
     <>
-      <div className="w-4/5 lg:w-3/5 text-white  mx-auto bg-black h-72 shadow-lg rounded-3xl overflow-hidden flex flex-col justify-center items-center my-10 ">
-        <div className="px-4 py-2">
-          <h2 className="text-center  font-bold text-2xl mb-4">Receive Food Conveniently</h2>
-          <p className="text-center  text-base mb-4">Join our team of satisfied customers</p>
-          <button className="block w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
-            Join Now
-          </button>
-        </div>
-      </div>
-
       <footer className="bg-transparent p-6">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 px-4 py-10">
           <div>
