@@ -2,19 +2,19 @@
 import { useEffect, useRef } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
 
-function MapView() {
+function MapView({ places }) {
  const googleMapRef = useRef(null);
 
   // List of places
   // 5.67028300690168, -0.15249768908456168
   // 5.669956015850352, -0.15213779515707945
   // 5.670991486877253, -0.15401941449532894
-  const places = [
-    { lat: 5.67028300690168, lng: -0.15249768908456168 },
-    { lat: 5.669956015850352, lng: -0.15213779515707945 },
-    { lat: 5.670991486877253, lng: -0.15401941449532894 },
-    // Add more places here...
-  ];
+  // const places = [
+  //   { lat: 5.67028300690168, lng: -0.15249768908456168 },
+  //   { lat: 5.669956015850352, lng: -0.15213779515707945 },
+  //   { lat: 5.670991486877253, lng: -0.15401941449532894 },
+  //   // Add more places here...
+  // ];
 
  useEffect(() => {
 
