@@ -9,9 +9,9 @@ const Listing = () => {
   const restaurant = restaurants.find((restaurant) => restaurant.id === +id);
   console.log(restaurant.name);
   return (
-    <client-only>
+    <>
       <h1>{restaurant.name}</h1>
-    </client-only>
+    </>
   );
 };
 
