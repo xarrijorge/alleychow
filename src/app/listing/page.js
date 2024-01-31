@@ -2,23 +2,46 @@
 import React from "react";
 import restaurants from "../../../data";
 import { useSearchParams } from "next/navigation";
+import axios from "axios";
 
 const Listing = () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
   const restaurant = restaurants.find((restaurant) => restaurant.id === +id);
-  console.log(restaurant.name);
+  const URI = "https://graph.facebook.com/v19.0/225937017268827/messages"
+
+  const accessToken = process.env.NEXT_PUBLIC_WHATSAPP_ACCESS_TOKEN;
+
+  const data = {
+    messaging_product: 'whatsapp',
+    recipient_type: 'individual',
+    to: '+233535590537',
+    type: 'text',
+    text: {
+      preview_url: false,
+      body: 'Hello from the frontend',
+    },
+  };
+
+  const headers = {
+    Authorization: `Bearer ${accessToken}`,
+    'Content-Type': 'application/json',
+  };
+
+
+  const orderNow = () => {
+    axios.post(URI, data, { headers })
+    // .then(response => {
+    //   console.log('Message sent successfully:', response.data);
+    // })
+    // .catch(error => {
+    //   console.error('Error sending message:', error.response.data);
+    // });
+    console.log('testing')
+  }
 
   return (
-    // key={restaurant.id}
-    // image={restaurant.image}
-    // CardTitle={restaurant.name}
-    // titleHref="/#"
-    // btnHref="5"
-    // CardDescription={restaurant.address}
-    // Button="View Details"
-    // id={restaurant.id}
-    <client-only>
+    <>
       <div class="py-8">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex flex-col md:flex-row -mx-4">
@@ -32,7 +55,7 @@ const Listing = () => {
               </div>
               <div class="flex -mx-2 mb-4">
                 <div class="w-1/2 px-2">
-                  <button class="w-full bg-orange-700 dark:bg-orange-600 text-white py-2 px-4 rounded-full font-bold hover:bg-orange-400 dark:hover:bg-orange-700">
+                  <button onClick={() => orderNow} class="w-full bg-orange-700 dark:bg-orange-600 text-white py-2 px-4 rounded-full font-bold hover:bg-orange-400 dark:hover:bg-orange-700">
                     Order Now
                   </button>
                 </div>
@@ -57,7 +80,7 @@ const Listing = () => {
                     Availability:
                   </span>
                   <span class="text-gray-600 dark:text-gray-800">
-                    Availabile
+                    Available
                   </span>
                 </div>
               </div>
@@ -74,7 +97,7 @@ const Listing = () => {
           </div>
         </div>
       </div>
-    </client-only>
+    </>
   );
 };
 
