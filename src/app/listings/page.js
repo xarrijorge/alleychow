@@ -37,6 +37,8 @@ const Listings = () => {
                 titleHref="/#"
                 btnHref="5"
                 CardDescription={restaurant.address}
+                foodType={restaurant.foodType}
+                foodList={restaurant.foodList}
                 Button="View Details"
                 id={restaurant.id}
               />
