@@ -6,6 +6,7 @@ const restaurants = [
     name: "Spicy Jollof Haven",
     chef: "Chef Kwame",
     cuisine: "Ghanian",
+    price: "Ghc 40",
     rating: 4.5,
     location: {
       latitude: 5.6037,
@@ -22,6 +23,7 @@ const restaurants = [
     name: "Plantain Delights",
     chef: "Chef Ama",
     cuisine: "Ghanian",
+    price: "Ghc 20",
     rating: 4.2,
     location: {
       latitude: 5.56,
@@ -36,6 +38,7 @@ const restaurants = [
     name: "Banku Bliss",
     chef: "Chef Mensah",
     cuisine: "Ghanian",
+    price: "Ghc 40",
     rating: 4.0,
     location: {
       latitude: 5.5575,
@@ -50,6 +53,8 @@ const restaurants = [
     name: "Fufu Fusion",
     chef: "Chef Nana",
     cuisine: "Ghanian",
+    price: "Ghc 40",
+
     rating: 4.8,
     location: {
       latitude: 5.798,
@@ -68,6 +73,8 @@ const restaurants = [
     name: "Waakye Wonders",
     chef: "Chef Yaa",
     cuisine: "Ghanian",
+    price: "Ghc 30",
+
     rating: 4.3,
     location: {
       latitude: 5.5529,
@@ -89,6 +96,8 @@ const restaurants = [
     chef: "Chef Adwoa",
     cuisine: "Ghanian",
     rating: 4.6,
+    price: "Ghc 40",
+
     location: {
       latitude: 5.6031,
       longitude: -0.1762,
@@ -106,6 +115,8 @@ const restaurants = [
     name: "Kelewele Corner",
     chef: "Chef Kofi",
     cuisine: "Ghanian",
+    price: "Ghc 30",
+
     rating: 4.4,
     location: {
       latitude: 5.5567,
@@ -125,6 +136,8 @@ const restaurants = [
     name: "Kenkey Paradise",
     chef: "Chef Akua",
     cuisine: "Ghanian",
+    price: "Ghc 40",
+
     rating: 4.7,
     location: {
       latitude: 5.613,
@@ -144,6 +157,8 @@ const restaurants = [
     name: "Yam Fest",
     chef: "Chef Esi",
     cuisine: "Ghanian",
+    price: "Ghc 20",
+
     rating: 4.2,
     location: {
       latitude: 5.5835,
@@ -163,6 +178,8 @@ const restaurants = [
     name: "Plantain Paradise",
     chef: "Chef Osei",
     cuisine: "Ghanian",
+    price: "Ghc 20",
+
     rating: 4.9,
     location: {
       latitude: 5.7722,
@@ -182,6 +199,8 @@ const restaurants = [
     name: "Fante Delicacies",
     chef: "Chef Atta",
     cuisine: "Ghanian",
+    price: "Ghc 40",
+
     rating: 4.3,
     location: {
       latitude: 5.5567,

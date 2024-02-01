@@ -96,7 +96,7 @@ const Listing = () => {
                     Price:
                   </span>
                   <span className="text-gray-600 dark:text-gray-800">
-                    $29.99
+                    {restaurant.price}
                   </span>
                 </div>
                 <div>
