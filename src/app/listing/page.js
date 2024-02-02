@@ -1,5 +1,5 @@
 "use client";
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import restaurants from "../../../data";
 import { useSearchParams } from "next/navigation";
 import axios from "axios";
@@ -14,12 +14,12 @@ const Listing = () => {
 
   const accessToken = process.env.NEXT_PUBLIC_WHATSAPP_ACCESS_TOKEN;
   const [phoneNumber, setPhoneNumber] = useState("")
-  const [description,setDescription] = useState("")
+  const [description, setDescription] = useState("")
   const [displayUsername, setDisplayUsername] = useState("");
   const [isValid, setIsValid] = useState(false);
   const [position, setPosition] = useState(null);
 
-  const  getLocation =  ()=>{
+  const getLocation = () => {
     if (!navigator.geolocation) {
       alert('Geolocation is not supported by your browser');
       return;
@@ -42,15 +42,15 @@ const Listing = () => {
     type: 'text',
     text: {
       preview_url: false,
-      body: `Order from ${displayUsername}\nfor ${restaurant.name}\nat ${restaurant.address}\nfor $40.\n${phoneNumber? 'Contact at '+phoneNumber : 'No contact information'}\nDescription : ${description}\nLocation :  href=https://www.google.com/maps/search/?api=1&query=${position?.latitude},${position?.longitude}`,
+      body: `Order from ${displayUsername}\nfor ${restaurant.name}\nat ${restaurant.address}\nfor $40.\n${phoneNumber ? 'Contact at ' + phoneNumber : 'No contact information'}\nDescription : ${description}\nLocation :  href=https://www.google.com/maps/search/?api=1&query=${position?.latitude},${position?.longitude}`,
     },
   };
 
   const validatePhoneNumber = (number) => {
-    const pattern = /^\+\d{1,3}\d{9}$/;
+    const pattern = /^\+?\d{1,3}\d{9}$/;
     return pattern.test(number);
-   };
-   
+  };
+
 
   const headers = {
     Authorization: `Bearer ${accessToken}`,
@@ -58,10 +58,11 @@ const Listing = () => {
   };
 
   useEffect(() => {
+    getLocation()
     setIsValid(validatePhoneNumber(phoneNumber));
-   }, [phoneNumber]);
+  }, [phoneNumber]);
 
-  const orderNow =  () => {
+  const orderNow = () => {
     // getLocation()
     console.log(displayUsername)
     console.log(data.text.body)
@@ -103,21 +104,24 @@ const Listing = () => {
                       type="text"
                       value={phoneNumber}
                       placeholder="Provide Your Phone number"
-                      onChange={(e)=>setPhoneNumber(e.target.value)}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
                       className="w-full md:w-6/10 lg:w-6/10 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                     />
-                    <label>Description</label>
+                    <label>Location Description</label>
                     <textarea
                       id="description"
                       value={description}
-                      onChange={(e)=>setDescription(e.currentTarget.value)}
-                      placeholder="Enter your description here..."
+                      onChange={(e) => setDescription(e.currentTarget.value)}
+                      placeholder="Enter your Location here..."
                       className="w-full md:w-6/10 lg:w-6/10 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                     />
                   </form>
-                  <button onClick={orderNow} className="w-full bg-orange-700 dark:bg-orange-600 text-white py-2 px-4 rounded-full font-bold hover:bg-orange-400 dark:hover:bg-orange-700" disabled={!isValid}>
-                    Order Now
-                  </button>
+                  {
+                    validatePhoneNumber(phoneNumber) && position &&
+                    <button onClick={orderNow} className="w-full bg-orange-700 dark:bg-orange-600 text-white py-2 px-4 rounded-full font-bold hover:bg-orange-400 dark:hover:bg-orange-700">
+                      Order Now
+                    </button>
+                  }
                 </div>
               </div>
             </div>
