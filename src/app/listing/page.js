@@ -59,13 +59,10 @@ const Listing = () => {
   };
 
   useEffect(() => {
-    getLocation()
     setIsValid(validatePhoneNumber(phoneNumber));
   }, [phoneNumber]);
 
   const orderNow = () => {
-    console.log(displayUsername)
-    console.log(data.text.body)
     axios.post(URI, data, { headers })
       .then(response => {
         console.log('Message sent successfully:', response.data);
@@ -76,9 +73,10 @@ const Listing = () => {
       });
   }
   useEffect(() => {
+    getLocation()
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setDisplayUsername(user.displayName);
+        user.displayName ? setDisplayUsername(user.displayName) : setDisplayUsername(user.email.split("@")[0]);
       }
     });
   }, []);
@@ -121,7 +119,7 @@ const Listing = () => {
                     />
                   </form>
                   {
-                    validatePhoneNumber(phoneNumber) && position &&
+                    validatePhoneNumber(phoneNumber) &&
                     <button onClick={orderNow} className="w-full bg-orange-700 dark:bg-orange-600 text-white py-2 px-4 rounded-full font-bold hover:bg-orange-400 dark:hover:bg-orange-700">
                       Order Now
                     </button>
