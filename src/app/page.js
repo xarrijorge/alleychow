@@ -76,7 +76,7 @@ export default function Home() {
 
             <Link href="/login" onClick={logOut}>
               <button className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-800">
-                Logout
+                Login
               </button>
             </Link>
           </div>
@@ -111,15 +111,15 @@ export default function Home() {
 
         {/* join Now */}
         <div className="w-4/5 lg:w-3/5 text-white mx-auto bg-black h-72 shadow-lg rounded-3xl overflow-hidden flex flex-col justify-center items-center my-28 ">
-        <div className="px-4 py-2 ">
-          <h2 className="text-center  font-bold text-2xl mb-4">Receive Food Conveniently</h2>
-          <p className="text-center  text-base mb-4">Join our team of satisfied customers</p>
-          <button className="block w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
-            Join Now
-          </button>
+          <div className="px-4 py-2 ">
+            <h2 className="text-center  font-bold text-2xl mb-4">Receive Food Conveniently</h2>
+            <p className="text-center  text-base mb-4">Join our team of satisfied customers</p>
+            <button className="block w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
+              Join Now
+            </button>
+          </div>
         </div>
-        </div>
-          {/* subscribe to email news letter */}
+        {/* subscribe to email news letter */}
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 px-4 py-10">
           <div>
             <h2 className="font-bold text-4xl mb-4 md:text-6xl">Stay Updated with Deliciousness</h2>
@@ -145,3 +145,4 @@ export default function Home() {
     </>
   );
 }
+
