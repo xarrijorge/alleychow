@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import restaurants from "../../../data";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import axios from "axios";
 import { auth } from "@/firebase/config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -11,6 +11,7 @@ const Listing = () => {
   const id = searchParams.get("id");
   const restaurant = restaurants.find((restaurant) => restaurant.id === +id);
   const URI = "https://graph.facebook.com/v19.0/225937017268827/messages"
+  const router = useRouter();
 
   const accessToken = process.env.NEXT_PUBLIC_WHATSAPP_ACCESS_TOKEN;
   const [phoneNumber, setPhoneNumber] = useState("")
@@ -69,11 +70,11 @@ const Listing = () => {
     axios.post(URI, data, { headers })
       .then(response => {
         console.log('Message sent successfully:', response.data);
+        router.push('/');
       })
       .catch(error => {
-        console.error('Error sending message:', error.response.data);
+        console.error('Error sending message:', error.data);
       });
-    console.log('testing')
   }
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
