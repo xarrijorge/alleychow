@@ -12,7 +12,6 @@ const Listing = () => {
   const restaurant = restaurants.find((restaurant) => restaurant.id === +id);
   const URI = "https://graph.facebook.com/v19.0/225937017268827/messages"
   const router = useRouter();
-
   const accessToken = process.env.NEXT_PUBLIC_WHATSAPP_ACCESS_TOKEN;
   const [phoneNumber, setPhoneNumber] = useState("")
   const [description, setDescription] = useState("")
@@ -37,13 +36,14 @@ const Listing = () => {
   }
 
   const data = {
-    messaging_product: 'whatsapp',
-    recipient_type: 'individual',
-    to: '+233535590537',
-    type: 'text',
+    messaging_product: "whatsapp",
+    recipient_type: "individual",
+    to: "+233535590537",
+    type: "text",
     text: {
       preview_url: false,
       body: `Order from ${displayUsername}\nfor ${restaurant.name}\nat ${restaurant.address}\nfor $40.\n${phoneNumber ? 'Contact at ' + phoneNumber : 'No contact information'}\nDescription : ${description}\nLocation :  href=https://www.google.com/maps/search/?api=1&query=${position?.latitude},${position?.longitude}`,
+
     },
   };
 
@@ -55,7 +55,7 @@ const Listing = () => {
 
   const headers = {
     Authorization: `Bearer ${accessToken}`,
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   };
 
   useEffect(() => {
@@ -64,7 +64,6 @@ const Listing = () => {
   }, [phoneNumber]);
 
   const orderNow = () => {
-    // getLocation()
     console.log(displayUsername)
     console.log(data.text.body)
     axios.post(URI, data, { headers })
@@ -93,8 +92,12 @@ const Listing = () => {
               <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
                 <img
                   className="w-full h-full object-cover"
+
                   src={restaurant.image}
-                  alt="Product Image"
+                  alt={restaurant.name}
+                  width={100}
+                  height={100}
+                  objectFit="cover"
                 />
               </div>
               <div className="flex -mx-2 mb-4">
@@ -123,6 +126,7 @@ const Listing = () => {
                       Order Now
                     </button>
                   }
+
                 </div>
               </div>
             </div>
@@ -133,12 +137,14 @@ const Listing = () => {
               <p className="text-gray-900 dark:text-gray-900 text-sm mb-4">
                 {restaurant.address}
               </p>
+
               <div className="flex mb-4">
                 <div className="mr-4">
                   <span className="font-bold text-gray-700 dark:text-gray-800">
                     Price:
                   </span>
                   <span className="text-gray-600 dark:text-gray-800">$29.99</span>
+
                 </div>
                 <div>
                   <span className="font-bold text-gray-700 dark:text-gray-800">
